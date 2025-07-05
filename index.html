@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Freelance Portfolio of [Your Name] - Web Developer, Designer, or Writer." />
+  <meta name="keywords" content="Freelancer, Portfolio, Web Developer, Graphic Designer, Writer" />
+  <meta name="author" content="Your Name" />
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <link rel="preload" as="image" href="background.jpg">
+</head>
+<body>
+  <header class="hero-section">
+    <video autoplay muted loop class="background-video">
+      <source src="Official Video- Raat Kamaal Hai - Guru Randhawa & Khushali Kumar - Tulsi Kumar - New Song 2018 - YouTube.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-content">
+      <h1><span id="typed-text"></span><span class="cursor">|</span></h1>
+      <p>Creative Freelancer | Web Developer | Designer</p>
+      <a href="#projects" class="btn">View My Work</a>
+    </div>
+    <nav class="navbar">
+      <a href="#profile">Profile</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="profile" class="section reveal">
+    <h2>Profile</h2>
+    <div class="profile-container" style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2.5rem 1rem;max-width:420px;margin:0 auto 2rem auto;">
+      <img src="1693061938879-01.jpeg" alt="Profile Photo" class="profile-photo" style="width:180px;height:180px;border-radius:50%;object-fit:cover;box-shadow:0 4px 16px rgba(0,0,0,0.18);margin-bottom:1.5rem;"/>
+      <p style="font-size:1.18rem;text-align:center;line-height:1.6;">Hello! I'm <strong>Abhishek</strong>, a dedicated freelancer passionate about building beautiful and functional web experiences. I love to solve problems and bring ideas to life through code and design.</p>
+    </div>
+  </section>
+
+  <section id="about" class="section reveal">
+    <h2>About Me</h2>
+    <p>I'm a passionate freelancer with expertise in full-stack development and UI/UX design. I create visually appealing and high-performance web apps.</p>
+  </section>
+
+  <section id="skills" class="section reveal">
+    <h2>Skills</h2>
+    <ul class="skills-list">
+      <li>HTML / CSS / JavaScript</li>
+      <li>React / Node.js</li>
+      <li>Figma / Photoshop</li>
+    </ul>
+  </section>
+
+  <section id="projects" class="section reveal">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <img src="project1.jpg" alt="Project 1" loading="lazy" onclick="openLightbox(this.src)" />
+        <h3>Portfolio Website</h3>
+        <p>Responsive portfolio using HTML, CSS, and JavaScript.</p>
+      </div>
+      <div class="project-card">
+        <img src="project2.jpg" alt="Project 2" loading="lazy" onclick="openLightbox(this.src)" />
+        <h3>Design Mockups</h3>
+        <p>UI concepts created in Figma and Adobe XD.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials" class="section reveal">
+    <h2>Testimonials</h2>
+    <blockquote>
+      "A creative and reliable professional who always delivers on time!" – Client A
+    </blockquote>
+  </section>
+
+  <section id="contact" class="section reveal">
+    <h2>Contact Me</h2>
+    <form action="https://formspree.io/f/YOUR-ID" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+    <div class="social-icons">
+      <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="CV.pdf" download class="btn">Download CV</a>
+    </div>
+  </section>
+
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Fullscreen Preview">
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Your Name. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    const typed = new Typed('#typed-text', {
+      strings: ["Hi, I'm Your Name", "Web Developer", "UI/UX Designer"],
+      typeSpeed: 50,
+      backSpeed: 30,
+      loop: true
+    });
+
+    const reveals = document.querySelectorAll(".reveal");
+    window.addEventListener("scroll", () => {
+      reveals.forEach(el => {
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+        if (elementTop < windowHeight - 100) {
+          el.classList.add("active");
+        }
+      });
+    });
+
+    function openLightbox(src) {
+      document.getElementById("lightbox-img").src = src;
+      document.getElementById("lightbox").style.display = "flex";
+    }
+    function closeLightbox() {
+      document.getElementById("lightbox").style.display = "none";
+    }
+  </script>
+</body>
+</html>
